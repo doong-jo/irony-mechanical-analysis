@@ -1,0 +1,31 @@
+{
+  "name": "r3f-svg-react-spring-transitions",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "lodash-es": "4.17.15",
+    "react": "experimental",
+    "react-dom": "experimental",
+    "react-reconciler": "experimental",
+    "react-scripts": "3.3.0",
+    "react-spring": "8.0.27",
+    "react-three-fiber": "4.0.11",
+    "scheduler": "experimental",
+    "three": "0.112.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
