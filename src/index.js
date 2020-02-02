@@ -6,17 +6,13 @@ import React from "react";
 import { Canvas } from "react-three-fiber";
 
 import Scene from "./components/Scene";
-import { requestGoogleNlpApi } from "./utils/googleApi";
+import SubTitle from "./components/Subtitle";
 
 import "./styles.css";
-import { NLP_EMOTION } from "./constants/string";
+import musicPlayer from "./utils/musicPlayer";
 
-/** Main component */
 function App() {
-  (async function test() {
-    const result = await requestGoogleNlpApi("i am sad", NLP_EMOTION);
-    console.log(result);
-  })();
+  musicPlayer.play();
 
   return (
     <Canvas
@@ -31,6 +27,7 @@ function App() {
     >
       <ambientLight intensity={0.5} />
       <spotLight intensity={0.5} position={[300, 300, 4000]} />
+      <SubTitle />
       <Scene />
     </Canvas>
   );
