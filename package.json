@@ -1,6 +1,8 @@
 {
   "name": "r3f-svg-react-spring-transitions",
+  "homepage": "https://doong-jo.github.io/irony-mechanical-analysis",
   "version": "1.0.0",
+  "license": "MIT",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
