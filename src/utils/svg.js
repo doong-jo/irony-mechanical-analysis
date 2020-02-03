@@ -3,12 +3,10 @@ import flatten from "lodash-es/flatten";
 
 import { svgs } from "../constants/arrays";
 
+const testSvgName = "sad1";
+
 export const paths = svgs
-  .map(
-    name =>
-      `https://raw.githubusercontent.com/doong-jo/irony-mechanical-analysis/master/src/resources/images/svg/${name +
-        (Math.random() > 0.5 ? 1 : 2)}.svg`
-  )
+  .map(name => `/${testSvgName}.svg`)
   .map(
     url =>
       new Promise(resolve =>
