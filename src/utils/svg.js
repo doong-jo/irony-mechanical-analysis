@@ -6,8 +6,10 @@ import { svgs } from "../constants/arrays";
 export const paths = svgs
   .map(
     name =>
-      `https://raw.githubusercontent.com/doong-jo/irony-mechanical-analysis/master/src/resources/images/svg/${name +
-        (Math.random() > 0.5 ? 1 : 2)}.svg`
+      `https://raw.githubusercontent.com/doong-jo/irony-mechanical-analysis/master/src/resources/images/svg/sad1.svg`
+    // name =>
+    //   `https://raw.githubusercontent.com/doong-jo/irony-mechanical-analysis/master/src/resources/images/svg/${name +
+    //     (Math.random() > 0.5 ? 1 : 2)}.svg`
   )
   .map(
     url =>

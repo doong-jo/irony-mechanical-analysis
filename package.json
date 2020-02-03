@@ -15,6 +15,7 @@
     "react-spring": "8.0.27",
     "react-three-fiber": "4.0.11",
     "scheduler": "experimental",
+    "styled-components": "^5.0.0",
     "three": "0.112.1"
   },
   "devDependencies": {},

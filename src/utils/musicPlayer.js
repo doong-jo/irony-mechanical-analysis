@@ -3,17 +3,24 @@ import { NLP_EMOTION } from "../constants/string";
 import { requestGoogleNlpApi } from "../utils/googleApi";
 import sceneController from "../utils/sceneController";
 import { getEmotion } from "../utils/emotionAnalyzer";
+import songs from "../constants/songs";
 
 class MusicPlayer {
   constructor() {
     this.sentencesHand = 0;
+    this.playTimeout = null;
     this.songIndex = 0;
     this.emotionsOfSongs = {};
     this.subtitleDispatcher = null;
+    this.playIndexDispatcher = null;
   }
 
   setSubTitleDispatcher(dispatcher) {
     this.subtitleDispatcher = dispatcher;
+  }
+
+  setPlayIndexDispatcher(dispatcher) {
+    this.playIndexDispatcher = dispatcher;
   }
 
   flattenSentences({ sentences }) {
@@ -41,8 +48,10 @@ class MusicPlayer {
   playInterval(songIndex) {
     this.songIndex = songIndex;
 
-    const { name, sentences } = Songs[songIndex];
+    let { name, sentences } = Songs[songIndex];
     if (this.sentencesHand === sentences.length) {
+      this.songIndex = (this.songIndex + 1) % songs.length;
+      this.play(this.songIndex);
       return;
     }
 
@@ -56,7 +65,7 @@ class MusicPlayer {
     console.log("emotion", emotion);
     console.log(name, content);
 
-    setTimeout(() => {
+    this.playTimeout = setTimeout(() => {
       this.playIntervalCallback();
     }, length);
   }
@@ -65,6 +74,12 @@ class MusicPlayer {
     this.sentencesHand = 0;
     await this.researchEmotion(songIndex);
     this.playInterval(songIndex);
+    this.playIndexDispatcher(songIndex);
+  }
+
+  playByIndex(songIndex) {
+    clearTimeout(this.playTimeout);
+    this.play(songIndex);
   }
 }
 
