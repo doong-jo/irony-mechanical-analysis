@@ -10,18 +10,27 @@ export const paths = svgs
   .map(
     url =>
       new Promise(resolve =>
-        new loader().load(url, shapes =>
-          resolve(
+        new loader().load(url, shapes => {
+          let indexId = 0;
+          let befId = 0;
+
+          return resolve(
             flatten(
-              shapes.paths.map(group =>
-                group.toShapes(true).map(shape => ({
+              shapes.paths.map(group => {
+                const curId = group.userData.node.id;
+                if (curId !== undefined && curId !== befId) {
+                  indexId++;
+                  befId = curId;
+                }
+
+                return group.toShapes(true).map(shape => ({
                   shape,
                   color: group.color,
-                  index: group.userData.node.id
-                }))
-              )
+                  index: indexId
+                }));
+              })
             )
-          )
-        )
+          );
+        })
       )
   );
