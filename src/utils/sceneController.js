@@ -4,6 +4,7 @@ class SceneController {
   constructor() {
     this.pageDispatcher = null;
     this.charDispatcher = null;
+    this.emotionDispatcher = null;
   }
 
   setPageDispatcher(dispatcher) {
@@ -14,12 +15,18 @@ class SceneController {
     this.charDispatcher = dispatcher;
   }
 
-  setPage(page) {
-    if (this.pageDispatcher) {
-      const emotion = emotions[page];
+  setEmotionDispatcher(dispatcher) {
+    this.emotionDispatcher = dispatcher;
+  }
 
-      this.pageDispatcher(emotion);
-      this.charDispatcher("heart" || page);
+  setPage(emotionName) {
+    if (this.pageDispatcher && this.charDispatcher && this.emotionDispatcher) {
+      const pageIndex = emotions[emotionName];
+
+      this.pageDispatcher(pageIndex);
+      // heart => test svg image
+      this.charDispatcher("heart" || emotionName);
+      this.emotionDispatcher(emotionName);
     }
   }
 }

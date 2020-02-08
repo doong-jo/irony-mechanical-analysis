@@ -8,7 +8,7 @@ import { Canvas } from "react-three-fiber";
 import "./styles.css";
 import songs from "./constants/songs";
 import musicPlayer from "./utils/musicPlayer";
-import { Scene, Subtitle, Playlist, Character } from "./components";
+import { Scene, Subtitle, Playlist, Character, Emotion } from "./components";
 
 function App() {
   musicPlayer.play();
@@ -30,8 +30,13 @@ function App() {
         <Subtitle />
         <Scene />
       </Canvas>
-      <Playlist currentPlayIndex={0} list={songs.map(song => song.name)} />
-      <Character position={{ left: "30%", top: "70%" }} />
+      <Playlist
+        position={{ left: "7%", top: "70%" }}
+        currentPlayIndex={0}
+        list={songs.map(song => song.name)}
+      />
+      <Character position={{ left: "50%", top: "60%" }} />
+      <Emotion position={{ left: "7%", top: "50%" }} />
     </>
   );
 }

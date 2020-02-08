@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   position: fixed;
-  left: 5%;
-  top: 70%;
+  left: ${props => props.position.left};
+  top: ${props => props.position.top};
   width: max-content;
   height: 300px;
   display: flex;
