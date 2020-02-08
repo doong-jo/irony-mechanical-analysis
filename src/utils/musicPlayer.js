@@ -56,8 +56,8 @@ class MusicPlayer {
     }
 
     const { content, length } = sentences[this.sentencesHand];
-    const { score } = this.emotionsOfSongs[name][this.sentencesHand];
-    const emotion = getEmotion(score);
+    const { score, magnitude } = this.emotionsOfSongs[name][this.sentencesHand];
+    const emotion = getEmotion(score, magnitude);
     sceneController.setPage(emotion);
     this.subtitleDispatcher(content);
 
