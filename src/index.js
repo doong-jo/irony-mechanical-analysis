@@ -5,13 +5,10 @@ import ReactDOM from "react-dom";
 import React from "react";
 import { Canvas } from "react-three-fiber";
 
-import Scene from "./components/Scene";
-import SubTitle from "./components/Subtitle";
-import Playlist from "./components/Playlist";
-
 import "./styles.css";
 import songs from "./constants/songs";
 import musicPlayer from "./utils/musicPlayer";
+import { Scene, Subtitle, Playlist, Character } from "./components";
 
 function App() {
   musicPlayer.play();
@@ -28,12 +25,13 @@ function App() {
           far: 20000
         }}
       >
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={0.1} />
         <spotLight intensity={0.5} position={[300, 300, 4000]} />
-        <SubTitle />
+        <Subtitle />
         <Scene />
       </Canvas>
       <Playlist currentPlayIndex={0} list={songs.map(song => song.name)} />
+      <Character position={{ left: "30%", top: "70%" }} />
     </>
   );
 }
