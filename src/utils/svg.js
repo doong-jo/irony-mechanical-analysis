@@ -13,10 +13,12 @@ export const paths = svgs
         new loader().load(url, shapes =>
           resolve(
             flatten(
-              shapes.paths.map((group, index) =>
-                group
-                  .toShapes(true)
-                  .map(shape => ({ shape, color: group.color, index }))
+              shapes.paths.map(group =>
+                group.toShapes(true).map(shape => ({
+                  shape,
+                  color: group.color,
+                  index: group.userData.node.id
+                }))
               )
             )
           )
