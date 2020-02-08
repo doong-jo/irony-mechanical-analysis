@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import SpriteAnimator from "react-sprite-animator";
 
 import * as S from "./style";
+import sceneController from "../../utils/sceneController";
 
 function Character({ position }) {
-  const ref = React.createRef();
+  const [emotion, setEmotion] = useState();
+  sceneController.setCharDispatcher(setEmotion);
 
   return (
     <S.Wrapper position={position}>
       <SpriteAnimator
-        ref={ref}
         width={36}
         height={36}
-        sprite="images/sprite/heart.svg"
+        sprite={`images/sprite/${emotion}.svg`}
         shouldAnimate={true}
         fps={60}
         startFrame={0}

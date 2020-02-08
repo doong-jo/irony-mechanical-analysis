@@ -61,10 +61,6 @@ class MusicPlayer {
     sceneController.setPage(emotion);
     this.subtitleDispatcher(content);
 
-    console.log(score);
-    console.log("emotion", emotion);
-    console.log(name, content);
-
     this.playTimeout = setTimeout(() => {
       this.playIntervalCallback();
     }, length);
