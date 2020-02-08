@@ -31,7 +31,7 @@ function App() {
         <Scene />
       </Canvas>
       <Playlist
-        position={{ left: "7%", top: "70%" }}
+        position={{ left: "7%", top: "60%" }}
         currentPlayIndex={0}
         list={songs.map(song => song.name)}
       />
