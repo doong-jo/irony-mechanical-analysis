@@ -26,14 +26,14 @@ function Emotion({ position }) {
   }
 
   return (
-    <>
+    <div style={{ position: 'fixed', left: position.left, top: position.top, transform: 'translate(70px, -30px)' }}>
       <S.Wrapper position={position}>
         <img style={{ width: '300px', height: '200px', transform: "translate(-130px, -100px)"}} src='./images/emotion/emotion-diagram.png' alt='emotion-diagram' />
       </S.Wrapper>
       <S.Wrapper rotation={getRotation(emotion)} position={position}>
         <img style={{ transformOrigin: "50% 100%", width: '50px', height: '100px'}} src='./images/emotion/needle.png' alt='emotion-diagram' />
       </S.Wrapper>
-    </>
+    </div>
   );
 }
 

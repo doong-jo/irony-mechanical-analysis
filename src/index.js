@@ -36,7 +36,7 @@ function App() {
         list={songs.map(song => song.name)}
       />
       <Character position={{ left: "50%", top: "60%" }} />
-      <Emotion position={{ left: "19%", top: "43%" }} />
+      <Emotion position={{ left: "7%", top: "43%" }} />
     </>
   );
 }
