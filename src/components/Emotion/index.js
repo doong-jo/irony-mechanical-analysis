@@ -8,25 +8,32 @@ function Emotion({ position }) {
   sceneController.setEmotionDispatcher(setEmotion);
 
   function getRotation(currentEmotion) {
-    if (currentEmotion.startsWith("sad")) {
-      return "0deg";
-    } else if (currentEmotion.startsWith("angry")) {
-      return "36deg";
-    } else if (currentEmotion.startsWith("surprise")) {
-      return "72deg";
-    } else if (currentEmotion.startsWith("calm")) {
-      return "108deg";
+    if (currentEmotion.startsWith("happy")) {
+      return "-90deg";
     } else if (currentEmotion.startsWith("anticipated")) {
-      return "144deg";
-    } else if (currentEmotion.startsWith("happy")) {
-      return "180deg";
+      return "-45deg";
+    } else if (currentEmotion.startsWith("calm")) {
+      return "-20deg";
+    } else if (currentEmotion.startsWith("surprise")) {
+      return "20deg";
+    } else if (currentEmotion.startsWith("sad")) {
+      return "45deg";
+    } else if (currentEmotion.startsWith("angry")) {
+      return "90deg";
+    } else {
+      console.log('0deg', currentEmotion);
     }
   }
 
   return (
-    <S.Wrapper rotation={getRotation(emotion)} position={position}>
-      👈
-    </S.Wrapper>
+    <>
+      <S.Wrapper position={position}>
+        <img style={{ width: '300px', height: '200px', transform: "translate(-130px, -100px)"}} src='./images/emotion/emotion-diagram.png' alt='emotion-diagram' />
+      </S.Wrapper>
+      <S.Wrapper rotation={getRotation(emotion)} position={position}>
+        <img style={{ transformOrigin: "50% 100%", width: '50px', height: '100px'}} src='./images/emotion/needle.png' alt='emotion-diagram' />
+      </S.Wrapper>
+    </>
   );
 }
 

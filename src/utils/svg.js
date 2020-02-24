@@ -6,7 +6,7 @@ import { svgs } from "../constants/arrays";
 export const paths = svgs
   .map(
     // name => `./images/svg/${name}.svg`
-    name => `./images/svg/sad1.svg`
+    name => `./images/svg/happy1.svg`
     // `https://raw.githubusercontent.com/doong-jo/irony-mechanical-analysis/master/public/images/svg/sad1.svg`
     // name =>
     //   `https://raw.githubusercontent.com/doong-jo/irony-mechanical-analysis/master/src/resources/images/svg/${name +

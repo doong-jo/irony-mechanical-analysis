@@ -11,3 +11,9 @@ export const Wrapper = styled.div`
 
   transform: rotate(${props => props.rotation});
 `;
+
+export const Container = styled.div`
+  position: fixed;
+  left: ${props => props.position.left};
+  top: ${props => props.position.top};
+`;

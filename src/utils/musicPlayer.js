@@ -59,7 +59,10 @@ class MusicPlayer {
     const { score, magnitude } = this.emotionsOfSongs[name][this.sentencesHand];
     const emotion = getEmotion(score, magnitude);
     sceneController.setPage(emotion);
-    this.subtitleDispatcher(content);
+    if( this.subtitleDispatcher ) {
+      this.subtitleDispatcher(content);
+    }
+    
 
     this.playTimeout = setTimeout(() => {
       this.playIntervalCallback();

@@ -24,8 +24,17 @@ export default [
       { content: "다못찬 굴바구니 머리에이고", length: 12000 },
       { content: "엄마는 고갯길을 달려옵니다", length: 12000 }
     ]
-  },
-  {
+  }, {
+    name: "반짝 반짝 작은별",
+    sentences: [
+      { content: "반짝 반짝 작은 별", length: 4000 },
+      { content: "아름답게 비치네", length: 4000 },
+      { content: "서쪽 하늘에서도", length: 4000 },
+      { content: "동쪽 하늘에서도", length: 4000 },
+      { content: "반짝 반짝 작은 별", length: 4000 },
+      { content: "아름답게 비치네", length: 4000 },
+    ]
+  }, {
     name: "Feeling Good",
     sentences: [
       { content: "Birds flying high", length: 3000 },

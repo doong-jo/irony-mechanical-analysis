@@ -25,7 +25,7 @@ class SceneController {
 
       this.pageDispatcher(pageIndex);
       // heart => test svg image
-      this.charDispatcher("heart" || emotionName);
+      this.charDispatcher(emotionName);
       this.emotionDispatcher(emotionName);
     }
   }
