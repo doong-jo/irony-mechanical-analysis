@@ -11,17 +11,17 @@ function Character({ position }) {
   console.log(emotion);
   return (
     <S.Wrapper position={position}>
-      <SpriteAnimator
+      {/* <SpriteAnimator
         width={250}
         height={350}
         // sprite={`./images/sprite/${emotion}.svg`}
-        sprite={`./images/sprite/angry1.svg`}
+        sprite={`./images/sprite/angry_ch.svg`}
         shouldAnimate={true}
         fps={30}
-        scale={2}
+        scale={1}
         startFrame={0}
         stopLastFrame={false}
-      />
+      /> */}
     </S.Wrapper>
   );
 }
