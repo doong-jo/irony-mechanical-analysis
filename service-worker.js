@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/irony-mechanical-analysis/precache-manifest.1befd8ac18bdc2d95374b6740e51ce0a.js"
+  "/irony-mechanical-analysis/precache-manifest.36f78eb10f0a856a74e49ddd1265f201.js"
 );
 
 self.addEventListener('message', (event) => {
