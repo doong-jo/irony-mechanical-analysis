@@ -17,7 +17,7 @@ function Character({ position }) {
             width: "200px",
             height: "300px"
           }}
-          src={`./images/char/${emotion}.png`}
+          src={`./images/char/${emotion}1.png`}
         />
       )}
     </S.Wrapper>
