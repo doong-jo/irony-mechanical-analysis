@@ -11,7 +11,16 @@ function Character({ position }) {
   console.log(emotion);
   return (
     <S.Wrapper position={position}>
-      <img style={{ transform: 'translateY(-100px)', width: '200px', height: '300px' }} src={`./images/char/${emotion}.png`} />
+      {emotion && (
+        <img
+          style={{
+            transform: "translateY(-100px)",
+            width: "200px",
+            height: "300px"
+          }}
+          src={`./images/char/${emotion}.png`}
+        />
+      )}
     </S.Wrapper>
   );
 }
