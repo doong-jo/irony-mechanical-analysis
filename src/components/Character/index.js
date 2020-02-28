@@ -8,7 +8,6 @@ function Character({ position }) {
   const [emotion, setEmotion] = useState();
   sceneController.setCharDispatcher(setEmotion);
 
-  console.log(emotion);
   return (
     <S.Wrapper position={position}>
       {emotion && (
